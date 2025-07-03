@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 46, 109); 
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#back-button {
+    background-color: rgb(219, 0, 50); 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#theme-switcher {
+    background-color: rgb(219, 0, 50); 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#back-button:hover {
+    background-color: rgb(255, 69, 69); 
+}
+
+#controls {
+    background-color: white; 
+    color: rgb(0, 46, 109); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#controls label {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(219, 0, 50); 
+    margin-bottom: 5px;
+    display: block;
+}
+
+#controls select,
+#controls input[type="number"],
+#controls button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: 1px solid rgb(0, 46, 109); 
+    border-radius: 5px;
+    color: rgb(0, 46, 109); 
+}
+
+#controls button {
+    background-color: rgb(219, 0, 50); 
+    color: white; 
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#controls button:disabled {
+    background-color: rgb(170, 0, 39); 
+    cursor: not-allowed;
+}
+
+#controls button:hover:not(:disabled) {
+    background-color: rgb(255, 69, 69); 
+}
+
+#timer,
+#step-counter {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: rgb(219, 0, 50); 
+}
+
+#game-board {
+    display: grid;
+    gap: 3px; 
+    margin: 20px auto;
+    background-color: rgb(0, 46, 109); 
+    border: 3px solid rgb(219, 0, 50); 
+    padding: 10px;
+}
+
+#game-board.easy {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+#game-board.medium {
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+#game-board.difficult {
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+.cell {
+    width: 40px; 
+    height: 40px;
+    background-color: white; 
+    color: rgb(0, 46, 109); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid rgb(219, 0, 50); 
+    transition: background-color 0.3s ease;
+}
+
+.cell.revealed {
+    background-color: rgb(219, 0, 50); 
+    color: white;
+    cursor: default;
+}
+
+.cell.flagged {
+    background-color: rgb(0, 46, 109); 
+    color: rgb(219, 0, 50); 
+}
+
+
+#game-message {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#game-message.win {
+    color: rgb(0, 255, 0); 
+}
+
+#game-message.lose {
+    color: rgb(219, 0, 50); 
+}
